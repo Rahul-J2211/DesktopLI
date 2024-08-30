@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .amazon-link{
+            color: rgb(0,113,133);
+        }
+        .shoes{
+            font-weight: bold;
+        }
+        .stock{
+            color: rgb(0,118,0);
+            font-weight: bold;
+        }
+        
+        .cart{
+            background-color: rgb(255,216,20);
+            border: none;   
+            border-radius: 15px;
+            width : 100px;
+            height: 25px;
+            transition: background-color 0.5s;
+        }
+
+        .cart:hover{
+            background-color: rgb(239, 203, 19);
+            cursor: pointer;
+        }
+
+        .cart:active{
+            opacity: 0.5;
+        }
+
+        .buy{
+            background-color: rgb(255,164,28);
+            border: none;   
+            border-radius: 15px;
+            width : 100px;
+            height: 25px;
+            transition: background-color 0.5s;
+        }        
+        
+        .buy:hover{
+            background-color:rgb(211, 129, 7) ;
+            cursor: pointer;
+        }
+
+        .buy:active{
+            opacity: 0.5;
+        }
+        </style>
+</head>
+<body>
+    <div class="amazon-link">
+        <a href="https://www.amazon.com">Back to amazon</a><br>
+
+    </div>
+    <div class="shoes">
+        <p>Nike Black Runnning Shoes</p>
+    </div>
+    <div class="stock">
+        <p> $39 - in stock.</p>
+    </div>
+    <div class="delivery">
+        <p>Free delivery tomorrow.</p>
+    </div>
+    <div class="buttons">
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy now</button>
+    </div>    
+</body>
+</html>

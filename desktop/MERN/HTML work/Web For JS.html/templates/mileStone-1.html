@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone - 1</title>
+    <style>
+        body {
+            background-color: black;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        ------------------------------------------- MileStone - 1 --------------------------------------------------------------
+
+        Milestone 1: Basics of JavaScript (INDEX) 
+        
+            Install JavaScript, Console - `let`, `const`, `var` - Variable declaration - Data types - Primitive: Number, String, Boolean, Undefined, Null, Symbol, BigInt - Non primitive: Objects, Arrays, Functions  
+        
+        Install JavaScript:
+        
+            - Download nodejs via nodejs.org
+            - Insatll nodejs
+            - Run command
+                => node -v          ==>To check the nodejs version
+                => node index.js    ==>To run the index.js file 
+        
+        JavaScript:
+        
+            - To program the behavior of website
+            - Invented by Brandon Eich (1995)
+            - ECMAScript is the official name of the language
+        
+        Console:
+        
+            - The console in JavaScript is a tool provided by the browser or Node.js that allows developers to interact with their code by displaying   messages, errors, and debugging information. 
+            - It provides methods for logging messages and inspecting code behavior during execution.
+        
+            1. Console Methods:
+        
+                - `console.log()`: Prints general information to the console
+                    (eg) console.log("Hello, World!"); // Outputs: Hello, World!
+        
+                - `console.error()`: Displays errors in the console
+                    (eg) console.error("This is an error!"); // Outputs an error message
+        
+                - `console.warn()`: Outputs warnings
+                    (eg) console.warn("This is a warning!"); // Outputs a warning message
+        
+                - `console.table()`: Displays data in a table format
+                    (eg) const people = [{name: "John", age: 30}, {name: "Jane", age: 25}];
+                         console.table(people);
+        
+                - `console.dir()`: Displays an interactive list of the properties of an object
+        
+                - `console.time() / console.timeEnd()`: Measures the time taken by a piece of code to execute
+                    (eg) console.time("test");
+                        // Some code execution
+                        console.timeEnd("test"); // Outputs the time elapsed for execution
+        
+            2. Usage in Browsers:
+        
+                - Most modern browsers (like Chrome, Firefox, Safari, etc.) have built-in developer tools with a console tab.
+                - You can open it by pressing F12 or Ctrl + Shift + I, then navigating to the "Console" tab.
+                - You can execute JavaScript code directly in this console, which helps in testing and debugging.
+        
+            3. Console in Debugging:
+        
+                - Developers often use console.log() to trace the flow of their program, see the values of variables, and find bugs.
+                - It is one of the simplest yet most effective debugging tools.
+        
+        JavaScript Variables:
+        
+            - JavaScript Variables can be declared in 4 ways:
+                Automatically
+                Using var
+                Using let
+                Using const
+            - When to Use var, let, or const?
+                1. Always declare variables
+                2. Always use const if the value should not be changed
+                3. Always use const if the type should not be changed (Arrays and Objects)
+                4. Only use let if you can't use const
+                5. Only use var if you MUST support old browsers.
+                6. You cannot re-declare a variable declared with let or const.
+        
+        var:
+        
+            - Print the output in console
+          
+                var firstName="UserName"
+                console.log(firstName);   // Output => UserName
+            
+            - We can redecalre same variable using var keyword
+        
+                var age=56
+                var age=78
+                console.log(age);         // Output => 78
+            
+            - by using Var keyword , we can able to redeclare and reassign an variable. 
+            
+        let:
+        
+            - To print the value in cosole
+        
+                let name = "yourName" 
+                console.log(name)       // Output => name
+            
+            - We can't redeclare the same variable twice using let keyword
+        
+                let name ="javascript";
+                let name = "werty"; 
+                console.log(name)       // Output => Syntaxerror
+        
+            - We can edit the already decalred variable using let
+        
+                let user='username'
+                user="name"
+                console.log(user)       // Output => name
+        
+            - by using let , we cannot redeclare an varibale at twice,but we can able to change/edit the value
+        
+        const: 
+        
+            - We can't reassign, reedit, redeclare value to the variable which use the const keyword
+        
+                const userNAme="javascript";
+                userNAme='werty';
+                console.log(userNAme);      // Output => TypeError
+        
+        
+            - by using const , we cannot redeclare or reassign an value to teh variable. 
+        
+        variable decleration principle:
+        
+            1. variable name must begin with lowercase , uppercase , _ ,
+            2. number can be used in inbetween not at inital state 
+            3  expect underscore, dolor, astrik, other special chacter are not allowed 
+                eg.
+                    let name // valid variable
+                    let 0name // invalid variable format 
+                    let name0 // valid variable format
+        DataTypes:
+            -  JavaScript has 8 Datatypes under 2 variations.(Primitive , Non-Primitive).
+            
+                1. Primitive Data Types (Immutable):
+                    - These types hold simple, single values and are immutable (cannot be changed directly).
+        
+                    String: Represents text data.
+                        eg. let name = "John"; // Example of a string
+        
+                    Number: Represents numeric values, both integers and floats.
+                        eg. let age = 30; // Example of a number
+        
+                    BigInt: Used for very large integers beyond the safe limit of Number.
+                        eg. let bigNumber = 12345678901234567890n; // Example of a BigInt
+        
+                    Boolean: Represents logical values, either true or false.
+                        eg. let isActive = true; // Example of a boolean
+        
+                    Undefined: Represents a variable that has been declared but not assigned a value.
+                        eg. let x; // Example of undefined
+        
+                    Null: Represents the intentional absence of any object value.
+                        eg. let y = null; // Example of null
+        
+                    Symbol: Represents a unique and immutable value used as object property keys.
+                        eg. let id = Symbol("id"); // Example of a symbol
+        
+                2. Non-Primitive (Reference) Data Types:
+        
+                    - These types store references to objects, and their contents can be modified.
+        
+                        Object: Used to store collections of data and more complex entities.
+                            eg. let person = {name: "John", age: 30}; // Example of an object
+        
+                    - The object data type can contain both built-in objects, and user defined objects:
+        
+                        Built-in object types can be:
+                            objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more.
+            
+            - Primitive Data Types:
+        
+                Number, String, Boolean, Undefined, Null, Symbol, BigInt
+        
+            - Non-Primitive Data Types:
+        
+                Objects (including Arrays, Functions), Arrays, Dates
+        
+        
+    </pre>
+</body>
+</html>

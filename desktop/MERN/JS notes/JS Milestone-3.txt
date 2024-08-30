@@ -1,0 +1,194 @@
+------------------------------------------- MileStone - 3 --------------------------------------------------------------
+
+    Milestone 3: Functions and Array Methods  
+
+        1. Functions: Named, anonymous, callback, arrow, closure
+        2. Array methods: `map`, `filter`, `reduce`
+        3. Array methods: `slice`, `splice`, `pop`, `push`, `shift`, `unshift`
+        4. String methods: `trim`, `split`, `join`, `toLowerCase`, `toUpperCase`
+        5. Numbers, Date
+        6. Event handling
+
+        Functions: Named, anonymous, callback, arrow, closure
+
+            1. Named Function: A function with a specific name, which can be called by that name later in the code.
+            
+                // Named function to add two numbers
+                function addNumbers(a, b) {
+                    let sum = a + b;
+                    console.log(sum, "------------ named function");
+                    return sum;
+                }
+
+                addNumbers(10, 15); // Output: 25
+
+                - Usage: Named functions are used for code reusability and to perform a specific task.
+
+            2. Anonymous Function: A function without a name, often assigned to a variable.
+            
+                // Anonymous function to add two numbers
+                const addNumbersAnon = function(a, b) {
+                    let sum = a + b;
+                    console.log(sum, "------------ anonymous function");
+                    return sum;
+                };
+
+                addNumbersAnon(10, 15); // Output: 25
+
+                - Usage: Anonymous functions are useful for functions that are used only once or need to be passed as arguments to other functions.
+
+            3. Arrow Function: A shorter syntax for writing functions using the `=>` symbol.
+            
+                // Arrow function to add two numbers
+                const addNumbersArrow = (a, b) => {
+                    let sum = a + b;
+                    console.log(sum, "------------ arrow function");
+                    return sum;
+                };
+
+                addNumbersArrow(10, 15); // Output: 25
+
+                - Usage: Arrow functions are used for shorter syntax and do not have their own `this` context, making them suitable for certain callback functions.
+
+            4. Closure Function: A function that retains access to its lexical scope, even when the function is executed outside that scope.
+            
+                // Closure function using an arrow function
+                const createAdder = (baseValue) => {
+                    return (a, b) => {
+                        let sum = baseValue + a + b;
+                        console.log(sum, "------------ closure function (arrow)");
+                        return sum;
+                    };
+                };
+
+                const addWithBase = createAdder(10); // baseValue is 10
+                addWithBase(5, 7); // Output: 22
+
+                - Usage: Closures are powerful in creating functions with private variables or in scenarios
+                  like event handlers and callbacks where a function needs to remember the environment in which it was created.
+
+        Array Methods: `slice`, `splice`, `pop`, `push`, `shift`, `unshift`
+
+            1. `pop()`: Removes the last element from an array.
+            
+            let arr = ['jan', 'feb', 'mar', 'apr', 'may'];
+            arr.pop(); // Removes 'may'
+            console.log(arr); // Output: ['jan', 'feb', 'mar', 'apr']
+            
+            2. `push()`: Adds a new element to the end of an array.
+            
+            arr.push('dec'); // Adds 'dec' to the end
+            console.log(arr); // Output: ['jan', 'feb', 'mar', 'apr', 'dec']
+            
+            3. `shift()`: Removes the first element from an array.
+            
+            arr.shift(); // Removes 'jan'
+            console.log(arr); // Output: ['feb', 'mar', 'apr', 'dec']
+            
+            4. `unshift()`: Adds a new element to the beginning of an array.
+            
+            arr.unshift('nov'); // Adds 'nov' at the beginning
+            console.log(arr); // Output: ['nov', 'feb', 'mar', 'apr', 'dec']
+            
+            5. `splice()`: Can add or remove elements from a specific index in the array.
+            - Syntax: `array.splice(startIndex, deleteCount, item1, item2, ...)`
+            - Example: Removing and adding elements
+                
+                let day = ['mon', 'tues', 'wed', 'fri', 'sat', 'sun'];
+                day.splice(3, 3, 'thurs'); // Removes 3 elements starting from index 3, adds 'thurs'
+                console.log(day); // Output: ['mon', 'tues', 'wed', 'thurs']
+     
+            6. `slice()`: Returns a shallow copy of a portion of an array into a new array object. It does not modify the original array.
+            
+            let months = ['jan', 'feb', 'mar', 'apr', 'may'];
+            let springMonths = months.slice(2, 4); // Extracts elements from index 2 to 3
+            console.log(springMonths); // Output: ['mar', 'apr']
+            console.log(months); // Original array remains unchanged
+  
+
+        Array Methods in JavaScript: `map()`, `filter()`, and `reduce()`
+
+            - These array methods are powerful tools for transforming, filtering, and aggregating data. Let's break down how each of these functions works:
+
+            1. `map()` Method:
+
+                - Purpose: The `map()` method creates a new array populated with the results of calling a provided function 
+                           on every element in the calling array.
+                - Syntax:
+                
+                    array.map((element, index, array) => { /* return transformed element */ });
+                
+                - element: The current element being processed in the array.
+                - index: The index of the current element being processed (optional).
+                - array: The array `map()` was called upon (optional).
+
+                - Example: Multiply each element in the array by 5.
+            
+                    let array = [1, 2, 3, 4, 5];
+
+                    // Using a for loop
+                    let arr = [];
+                    for (let i = 0; i < array.length; i++) {
+                        let arrValue = array[i] * 5;
+                        arr.push(arrValue);
+                    }
+                    console.log(arr); // Output: [5, 10, 15, 20, 25]
+
+                    // Using map function
+                    let transformedArray = array.map((data) => {
+                        return data * 5;
+                    });
+                    console.log(transformedArray, "----------"); // Output: [5, 10, 15, 20, 25]
+            
+
+            2. `filter()` Method:
+
+                - Purpose: The `filter()` method creates a new array with all elements that pass the test implemented by the provided function.
+                - Syntax:
+                
+                    array.filter((element, index, array) => { /* return condition */ });
+                
+                - The callback function should return `true` to keep the element, or `false` otherwise.
+
+                - Example: Filter out elements greater than 35.
+            
+                    let array1 = [35, 45, 85, 15, 75];
+
+                    let resultArray = array1.filter((data) => {
+                        return data > 35;
+                    });
+                    console.log(resultArray, "resultArray"); // Output: [45, 85, 75]
+            
+
+            3. `reduce()` Method:
+
+                - Purpose: The `reduce()` method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+                - Syntax:
+                
+                    array.reduce((accumulator, currentValue, currentIndex, array) => { /* return new accumulator value */ }, initialValue);
+                
+                - accumulator: The accumulated value previously returned in the last invocation of the callback, or `initialValue`, if supplied.
+                - currentValue: The current element being processed in the array.
+                - initialValue: A value to use as the first argument to the first call of the callback (optional).
+
+                - Example: Sum all numbers in the array.
+ 
+                    let mark = [45, 75, 85, 65, 69];
+
+                    let avg_mark = mark.reduce((prev, curr) => {
+                        return prev + curr;
+                    }, 0); // Here, 0 is the initial value for prev
+
+                    console.log(avg_mark); // Output: 339
+
+                    /
+                    * How it works:
+                    * Prev      Curr     final value 
+                    *  0          45        45
+                    * 45          75        120
+                    * 120         85        205
+                    * 205         65        270
+                    * 270         69        339
+                    */
+ 
+

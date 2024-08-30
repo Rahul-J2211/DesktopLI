@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MileStone - 2</title>
+    <style>
+        body {
+            background-color: black;
+            color:antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        ------------------------------------------- MileStone - 2 --------------------------------------------------------------
+                                            
+        Milestone 2: Control Flow and Loops  
+
+                Operators - Conditional Statements: `if`, `else`, nested `if`, `switch` case, ternary operator - Loops: `for`, `while`, `do while`, `forEach`, `for of`, `for in`        
+
+        Operators:
+
+            1. arthematic => + - * / %
+            2. comparison => == < > <= >= === !== !=
+            3. logical => && || !
+            4. assignment => =
+            5. unary => += -= ... ++ --
+            6. ternary => ?:
+            7. typeof operators => typeof
+
+            1. Arithmetic Operators  (`+`, `-`, `*`, `/`, `%`)
+
+                -  Arithmetic operators are used to perform basic mathematical operations.
+
+                -  `+` (Addition):  Adds two numbers.
+                let a = 5 + 3; // a = 8
+                
+                -  `-` (Subtraction):  Subtracts the second number from the first.
+                let b = 5 - 3; // b = 2
+                
+                -  `*` (Multiplication):  Multiplies two numbers.
+                let c = 5 * 3; // c = 15
+                
+                -  `/` (Division):  Divides the first number by the second.
+                let d = 6 / 3; // d = 2
+                
+                -  `%` (Modulus):  Returns the remainder when the first number is divided by the second.
+                let e = 5 % 3; // e = 2
+                
+            2.  Comparison Operators  (`==`, `<`, `>`, `<=`, `>=`, `===`, `!==`, `!=`)
+
+                -  Comparison operators are used to compare two values and return a boolean (`true` or `false`).
+
+                -  `==` (Equality):  Compares two values for equality, after converting them to a common type.
+                    5 == "5"; // true
+                
+                -  `!=` (Inequality):  Compares two values for inequality, after converting them to a common type.
+                    5 != "5"; // false
+                
+                -  `===` (Strict Equality):  Compares two values for equality without type conversion. Checks both value and therir Datatypes are same or not.
+                    5 === "5"; // false
+                
+                -  `!==` (Strict Inequality):  Compares two values for inequality without type conversion.
+                    5 !== "5"; // true
+                
+                -  `<` (Less Than):  Checks if the left value is less than the right value.
+                    5 < 10; // true
+                
+                -  `>` (Greater Than):  Checks if the left value is greater than the right value.
+                    10 > 5; // true
+                
+                -  `<=` (Less Than or Equal To):  Checks if the left value is less than or equal to the right value.
+                    5 <= 5; // true
+                
+                -  `>=` (Greater Than or Equal To):  Checks if the left value is greater than or equal to the right value.
+                    5 >= 3; // true
+            
+            3.  Logical Operators  (`&&`, `||`, `!`)
+
+                -  Logical operators are used to perform logical operations, typically with boolean values.
+
+                -  `&&` (Logical AND):  Returns `true` if both operands are `true`.
+                    let x = true && false; // x = false
+                
+                -  `||` (Logical OR):  Returns `true` if at least one of the operands is `true`.
+                    let y = true || false; // y = true
+                
+                -  `!` (Logical NOT):  Inverts the boolean value of its operand.
+                    let z = !true; // z = false
+
+                - Truth table for this operators
+
+                    A         B          A&&B         A||B           !A            !B
+
+                    True      True        True         True          False         False
+
+                    True      False       False        True          False         True
+
+                    False     True        False        True          True          False  
+
+                    False     False       False        False         True          True 
+            
+            4.  Assignment Operator  (`=`)
+
+                - The assignment operator is used to assign a value to a variable.
+
+                -  `=` (Assignment):  Assigns the value on the right to the variable on the left.
+                    let a = 10; // a = 10
+                
+            5.  Unary Operators  (`++`, `--`, `+`, `-`)
+
+                - Unary operators operate on a single operand.
+
+                -  `++` (Increment):  Increases the value of the operand by 1.
+                    let a = 5;
+                    a++; // a = 6
+                
+                -  `--` (Decrement):  Decreases the value of the operand by 1.
+                    let b = 5;
+                    b--; // b = 4
+                
+                -  `+` (Unary Plus):  Converts its operand to a number.
+                    let c = +"5"; // c = 5
+                
+                -  `-` (Unary Negation):  Converts its operand to a number and then negates it.
+                    let d = -5; // d = -5
+            
+            6.  Ternary Operator  (`?:`)
+
+                -  The ternary operator is a shorthand for an `if-else` statement and is the only JavaScript operator that takes three operands.
+
+                -  `? :` (Ternary Operator):  The first operand is a condition, followed by a question mark (`?`). If the condition is `true`, the second operand is returned; otherwise, the third operand is returned.
+                    let age = 18;
+                    let isAdult = age >= 18 ? "Yes" : "No"; // isAdult = "Yes"
+            
+            7.  `typeof` Operator 
+
+                -  The `typeof` operator returns a string indicating the type of the operand.
+
+                -  `typeof`:  Returns the type of a variable or expression.
+                    typeof 42;        // "number"
+                    typeof "Hello";   // "string"
+                    typeof true;      // "boolean"
+                    typeof undefined; // "undefined"
+                    typeof null;      // "object" (this is a quirk in JavaScript)
+            
+            - These operators are essential in JavaScript for performing various operations, from simple arithmetic to complex logical expressions.
+
+        Conditional Statements:
+
+            *  If - else
+            *  Nested if
+            *  Ladder if (elseif)
+            *  Swich-case
+            *  Ternary operator
+
+            1. If-Else
+
+                - Syntax for If-Else
+
+                    if (condition) {
+                    // Block of code if condition is true
+                    } else {
+                    // Block of code if condition is false
+                    }
+
+                - The if-else statement is used to execute a block of code based on a condition. If the condition is true, the code inside the if block is executed; otherwise, the code inside the else block is executed.
+                    
+                    let age = 18;
+
+                    if (age >= 18) {
+                    console.log("You are an adult.");
+                    } else {
+                    console.log("You are not an adult.");
+                    }
+
+                PROBLEM :
+
+                    Given an integer M perform the following conditional actions:
+
+                        If M is multiple of 3 and 5 then print "Good Number" (without quotes).
+                        If M is only multiple of 3 and not of 5 then print "Bad Number" (without quotes).
+                        If M is only multiple of 5 and not of 3 then print "Poor Number" (without quotes).
+                        If M doesn't satisfy any of the above conditions then print "-1" (without quotes).
+                    
+                    Answer:
+
+                        let multipleNumber = 8;
+
+                        // If M is multiple of 3 and 5 then print "Good Number"
+                        if (multipleNumber % 3 === 0 && multipleNumber % 5 === 0) {
+                        console.log("Good Number");
+                        }
+
+                        // If M is only a multiple of 3 and not 5 then print "Bad Number"
+                        else if (multipleNumber % 3 === 0 && multipleNumber % 5 !== 0) {
+                        console.log("Bad Number");
+                        }
+
+                        // If M is only a multiple of 5 and not 3 then print "Poor Number"
+                        else if (multipleNumber % 3 !== 0 && multipleNumber % 5 === 0) {
+                        console.log("Poor Number");
+                        }
+
+                        // If M doesn't satisfy any of the above conditions then print "-1"
+                        else {
+                        console.log("-1");
+                        }
+
+                        
+
+            2. Nested If
+
+                - Syntax:
+
+                    if (condition1) {
+                    // Block of code if condition1 is true
+                    if (condition2) {
+                        // Block of code if condition2 is true
+                    }
+                    } else {
+                    // Block of code if condition1 is false
+                    }
+
+                - A nested if means an if statement inside another if. This is used when multiple conditions need to be checked sequentially.
+
+                    let score = 85;
+
+                    if (score >= 90) {
+                    console.log("Grade: A");
+                    } else {
+                    if (score >= 80) {
+                        console.log("Grade: B");
+                    } else {
+                        console.log("Grade: C");
+                    }
+                    }
+
+            3. Ladder If (else-if)
+                
+                - Syntax:
+
+                    if (condition1) {
+                    // Block of code if condition1 is true
+                    } else if (condition2) {
+                    // Block of code if condition2 is true
+                    } else if (condition3) {
+                    // Block of code if condition3 is true
+                    } else {
+                    // Block of code if all conditions are false
+                    }
+
+                - In an if-else if-else ladder, multiple conditions are checked one after another. The first true condition's block is executed, and the rest are ignored.
+
+                    let marks = 75;
+
+                    if (marks >= 90) {
+                    console.log("Grade: A");
+                    } else if (marks >= 80) {
+                    console.log("Grade: B");
+                    } else if (marks >= 70) {
+                    console.log("Grade: C");
+                    } else {
+                    console.log("Grade: D");
+                    }
+            4. Switch-Case
+
+                - Syntax:
+                        switch (expression) {
+                            case value1:
+                                // Block of code if expression === value1
+                                break;
+                            case value2:
+                                // Block of code if expression === value2
+                                break;
+                            // Add more cases as needed
+                            default:
+                                // Block of code if no case matches
+                            }
+
+
+                - The switch-case statement is used when you want to compare a variable or expression with several predefined values. Each value has a corresponding block of code that is executed if it matches.
+
+                    let day = 3;
+
+                    switch (day) {
+                    case 1:
+                        console.log("Monday");
+                        break;
+                    case 2:
+                        console.log("Tuesday");
+                        break;
+                    case 3:
+                        console.log("Wednesday");
+                        break;
+                    default:
+                        console.log("Invalid day");
+                    }
+
+            5. Ternary 
+
+                - Syntax:
+
+                    condition ? expression_if_true : expression_if_false;
+
+                - The ternary operator (?:) is a compact form of the if-else statement. It’s a one-liner used to assign values based on a condition.
+
+                    let age = 20;
+                    let canVote = (age >= 18) ? "Yes, can vote" : "No, cannot vote";
+
+                    console.log(canVote);  // Output: Yes, can vote
+
+                - This way, different types of conditional statements allow for flexibility in determining what blocks of code get executed based on specific conditions.
+
+            PRACTICE PROBLEM:
+
+                1. Write a  program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and grade according to following:
+                Percentage >= 90% : Grade A
+                Percentage >= 80% : Grade B
+                Percentage >= 70% : Grade C
+                Percentage >= 60% : Grade D
+                Percentage >= 40% : Grade E
+                Percentage < 40% : Grade F
+
+                2 .  Write a  program to input basic salary of an employee and calculate its Gross salary according to following:
+                Basic Salary <= 10000 : HRA = 20%, DA = 80%
+                Basic Salary <= 20000 : HRA = 25%, DA = 90%
+                Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+                3. Write a P program to input electricity unit charges and calculate total electricity bill according to the given condition:
+                For first 50 units Rs. 0.50/unit
+                For next 100 units Rs. 0.75/unit
+                For next 100 units Rs. 1.20/unit
+                For unit above 250 Rs. 1.50/unit
+                An additional surcharge of 20% is added to the bill
+
+                4. Problem 1: Triangle Classifier
+                Problem:
+                Given three sides of a triangle, determine its type (equilateral, isosceles, or scalene).
+
+                Input:
+                Three positive integers representing the lengths of the sides.
+
+                Output:
+                A string indicating the type of triangle.
+
+                Example:
+                Input: 3 4 5
+                Output: Scalene
+
+                5. Problem:
+                Determine if a given year is a leap year.
+
+                Input:
+                A positive integer representing the year.
+
+                Output:
+                A boolean value indicating whether the year is a leap year.
+
+                Example:
+                Input: 2024
+                Output: True
+
+        Loops:
+
+            - Loops are used to repeat a block of code as long as a condition is true. Below are explanations and syntax for the different types of loops in JavaScript.
+
+            1. For Loop
+                
+                - The for loop repeats a block of code a certain number of times.
+
+                - Syyntax:
+
+                    for (initialization; condition; increment/decrement) {
+                        // Code to be executed
+                    }
+                
+                - (eg)
+
+                    for (let i = 0; i < 5; i++) {
+                        console.log(i);  // Output: 0, 1, 2, 3, 4
+                    }
+                
+            2. While Loop
+
+                - The while loop repeats a block of code while a specified condition is true.
+
+                - Syntax:
+
+                    while (condition) {
+                        // Code to be executed
+                    }
+                
+                - (eg)
+
+                    let i = 0;
+                    while (i < 5) {
+                        console.log(i);  // Output: 0, 1, 2, 3, 4
+                        i++;
+                    }
+
+            3. Do-While Loop
+
+                - The do-while loop is similar to the while loop, but the block of code will always be executed at least once, even if the condition is false.
+
+                - Syntax:
+
+                    do {
+                        // Code to be executed
+                    } while (condition);
+
+                - Example:
+                    
+                    let i = 0;
+                    do {
+                        console.log(i);  // Output: 0, 1, 2, 3, 4
+                        i++;
+                    } while (i < 5);
+
+
+            4. ForEach Loop
+
+                - The forEach method is used to execute a function on each element of an array. It is not exactly a loop but a method for arrays.
+
+                - Syntax:
+
+                    array.forEach(function(element) {
+                    // Code to execute for each element
+                    });
+
+                - Example:
+
+                    let arr = [1, 2, 3, 4, 5];
+                    arr.forEach(function(item) {
+                    console.log(item);  // Output: 1, 2, 3, 4, 5
+                    });
+
+                - Loops through each element of the array and executes the function.
+
+            5. For-Of Loop
+
+                - The for...of loop is used to iterate over iterable objects (like arrays, strings, etc.), where each element is returned one at a time.
+
+                - Syntax:
+
+                    for (let variable of iterable) {
+                    // Code to be executed
+                    }
+
+                - Example:
+
+                    let arr = [1, 2, 3, 4, 5];
+                    for (let num of arr) {
+                    console.log(num);  // Output: 1, 2, 3, 4, 5
+                    }
+
+                - Iterates over the values of the iterable (arr).
+                
+            6. For-In Loop
+
+                - The for...in loop is used to iterate over the keys (properties) of an object or indices of an array.
+
+                - Syntax:
+
+                    for (let key in object) {
+                    // Code to be executed
+                    }
+
+                - Example with Objects:
+
+                    let person = {name: "John", age: 30, city: "New York"};
+                    for (let key in person) {
+                    console.log(key + ": " + person[key]);
+                    // Output: name: John, age: 30, city: New York
+                    }
+
+                - Example with Arrays:
+
+                    let arr = [10, 20, 30];
+                    for (let index in arr) {
+                    console.log(index + ": " + arr[index]);
+                    // Output: 0: 10, 1: 20, 2: 30
+                    }
+
+                - Iterates over the keys (properties) in objects or indices in arrays.
+    </pre>
+</body>
+</html>

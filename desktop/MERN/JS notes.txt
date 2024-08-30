@@ -1,0 +1,887 @@
+------------------------------------------- javascript INDEX --------------------------------------------------------------
+                                    JavaScript
+
+    Milestone 1: Basics of JavaScript  
+
+        1. Install JavaScript, Console
+        2. `let`, `const`, `var`
+        3. Variable declaration
+        4. Data types:
+            Primitive: Number, String, Boolean, Undefined, Null, Symbol, BigInt
+            Non primitive: Objects, Arrays, Functions
+
+    Milestone 2: Control Flow and Loops  
+
+        1. Operators
+        2. Conditional Statements: `if`, `else`, nested `if`, `switch` case, ternary operator
+        3. Loops: `for`, `while`, `do while`, `forEach`, `for of`, `for in`
+
+    
+    Milestone 3: Functions and Array Methods  
+
+        1. Functions: Named, anonymous, callback, arrow, closure
+        2. Array methods: `map`, `filter`, `reduce`
+        3. Array methods: `slice`, `splice`, `pop`, `push`, `shift`, `unshift`
+        4. String methods: `trim`, `split`, `join`, `toLowerCase`, `toUpperCase`
+        5. Numbers, Date
+        6. Event handling
+
+    
+    Milestone 4: Advanced JavaScript  
+
+        1. Spread, rest operators
+        2. `setInterval`, `setTimeout`
+        3. Async/await, promises
+        4. Object and array destructuring
+
+    
+    Milestone 5: OOP and DOM/BOM  
+
+        1. Object oriented programming
+        2. DOM elements, BOM elements
+
+------------------------------------------- MileStone - 1 --------------------------------------------------------------
+                                Milestone - 1  
+
+    Milestone 1: Basics of JavaScript (INDEX) 
+
+        Install JavaScript, Console - `let`, `const`, `var` - Variable declaration - Data types - Primitive: Number, String, Boolean, Undefined, Null, Symbol, BigInt - Non primitive: Objects, Arrays, Functions  
+
+    Install JavaScript:
+
+        - Download nodejs via nodejs.org
+        - Insatll nodejs
+        - Run command
+            => node -v          ==>To check the nodejs version
+            => node index.js    ==>To run the index.js file 
+
+    JavaScript:
+
+        - To program the behavior of website
+        - Invented by Brandon Eich (1995)
+        - ECMAScript is the official name of the language
+
+    Console:
+
+        - The console in JavaScript is a tool provided by the browser or Node.js that allows developers to interact with their code by displaying   messages, errors, and debugging information. 
+        - It provides methods for logging messages and inspecting code behavior during execution.
+
+        1. Console Methods:
+
+            - `console.log()`: Prints general information to the console
+                (eg) console.log("Hello, World!"); // Outputs: Hello, World!
+
+            - `console.error()`: Displays errors in the console
+                (eg) console.error("This is an error!"); // Outputs an error message
+
+            - `console.warn()`: Outputs warnings
+                (eg) console.warn("This is a warning!"); // Outputs a warning message
+
+            - `console.table()`: Displays data in a table format
+                (eg) const people = [{name: "John", age: 30}, {name: "Jane", age: 25}];
+                    console.table(people);
+
+            - `console.dir()`: Displays an interactive list of the properties of an object
+
+            - `console.time() / console.timeEnd()`: Measures the time taken by a piece of code to execute
+                (eg) console.time("test");
+                    // Some code execution
+                    console.timeEnd("test"); // Outputs the time elapsed for execution
+
+        2. Usage in Browsers:
+
+            - Most modern browsers (like Chrome, Firefox, Safari, etc.) have built-in developer tools with a console tab.
+            - You can open it by pressing F12 or Ctrl + Shift + I, then navigating to the "Console" tab.
+            - You can execute JavaScript code directly in this console, which helps in testing and debugging.
+
+        3. Console in Debugging:
+
+            - Developers often use console.log() to trace the flow of their program, see the values of variables, and find bugs.
+            - It is one of the simplest yet most effective debugging tools.
+
+    JavaScript Variables:
+
+        - JavaScript Variables can be declared in 4 ways:
+            Automatically
+            Using var
+            Using let
+            Using const
+        - When to Use var, let, or const?
+            1. Always declare variables
+            2. Always use const if the value should not be changed
+            3. Always use const if the type should not be changed (Arrays and Objects)
+            4. Only use let if you can't use const
+            5. Only use var if you MUST support old browsers.
+            6. You cannot re-declare a variable declared with let or const.
+
+    var:
+
+        - Print the output in console
+    
+            var firstName="UserName"
+            console.log(firstName);   // Output => UserName
+        
+        - We can redecalre same variable using var keyword
+
+            var age=56
+            var age=78
+            console.log(age);         // Output => 78
+        
+        - by using Var keyword , we can able to redeclare and reassign an variable. 
+        
+    let:
+
+        - To print the value in cosole
+
+            let name = "yourName" 
+            console.log(name)       // Output => name
+        
+        - We can't redeclare the same variable twice using let keyword
+
+            let name ="javascript";
+            let name = "werty"; 
+            console.log(name)       // Output => Syntaxerror
+
+        - We can edit the already decalred variable using let
+
+            let user='username'
+            user="name"
+            console.log(user)       // Output => name
+
+        - by using let , we cannot redeclare an varibale at twice,but we can able to change/edit the value
+
+    const: 
+
+        - We can't reassign, reedit, redeclare value to the variable which use the const keyword
+
+            const userNAme="javascript";
+            userNAme='werty';
+            console.log(userNAme);      // Output => TypeError
+
+
+        - by using const , we cannot redeclare or reassign an value to teh variable. 
+
+    variable decleration principle:
+
+        1. variable name must begin with lowercase , uppercase , _ ,
+        2. number can be used in inbetween not at inital state 
+        3  expect underscore, dolor, astrik, other special chacter are not allowed 
+            eg.
+                let name // valid variable
+                let 0name // invalid variable format 
+                let name0 // valid variable format
+    DataTypes:
+        -  JavaScript has 8 Datatypes under 2 variations.(Primitive , Non-Primitive).
+        
+            1. Primitive Data Types (Immutable):
+                - These types hold simple, single values and are immutable (cannot be changed directly).
+
+                String: Represents text data.
+                    eg. let name = "John"; // Example of a string
+
+                Number: Represents numeric values, both integers and floats.
+                    eg. let age = 30; // Example of a number
+
+                BigInt: Used for very large integers beyond the safe limit of Number.
+                    eg. let bigNumber = 12345678901234567890n; // Example of a BigInt
+
+                Boolean: Represents logical values, either true or false.
+                    eg. let isActive = true; // Example of a boolean
+
+                Undefined: Represents a variable that has been declared but not assigned a value.
+                    eg. let x; // Example of undefined
+
+                Null: Represents the intentional absence of any object value.
+                    eg. let y = null; // Example of null
+
+                Symbol: Represents a unique and immutable value used as object property keys.
+                    eg. let id = Symbol("id"); // Example of a symbol
+
+            2. Non-Primitive (Reference) Data Types:
+
+                - These types store references to objects, and their contents can be modified.
+
+                    Object: Used to store collections of data and more complex entities.
+                        eg. let person = {name: "John", age: 30}; // Example of an object
+
+                - The object data type can contain both built-in objects, and user defined objects:
+
+                    Built-in object types can be:
+                        objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more.
+        
+        - Primitive Data Types:
+
+            Number, String, Boolean, Undefined, Null, Symbol, BigInt
+
+        - Non-Primitive Data Types:
+
+            Objects (including Arrays, Functions), Arrays, Dates
+
+
+------------------------------------------- MileStone - 2 --------------------------------------------------------------
+                                        
+    Milestone 2: Control Flow and Loops  
+
+            Operators - Conditional Statements: `if`, `else`, nested `if`, `switch` case, ternary operator - Loops: `for`, `while`, `do while`, `forEach`, `for of`, `for in`        
+
+    Operators:
+
+        1. arthematic => + - * / %
+        2. comparison => == < > <= >= === !== !=
+        3. logical => && || !
+        4. assignment => =
+        5. unary => += -= ... ++ --
+        6. ternary => ?:
+        7. typeof operators => typeof
+
+        1. Arithmetic Operators  (`+`, `-`, `*`, `/`, `%`)
+
+            -  Arithmetic operators are used to perform basic mathematical operations.
+
+            -  `+` (Addition):  Adds two numbers.
+            let a = 5 + 3; // a = 8
+            
+            -  `-` (Subtraction):  Subtracts the second number from the first.
+            let b = 5 - 3; // b = 2
+            
+            -  `*` (Multiplication):  Multiplies two numbers.
+            let c = 5 * 3; // c = 15
+            
+            -  `/` (Division):  Divides the first number by the second.
+            let d = 6 / 3; // d = 2
+            
+            -  `%` (Modulus):  Returns the remainder when the first number is divided by the second.
+            let e = 5 % 3; // e = 2
+            
+        2.  Comparison Operators  (`==`, `<`, `>`, `<=`, `>=`, `===`, `!==`, `!=`)
+
+            -  Comparison operators are used to compare two values and return a boolean (`true` or `false`).
+
+            -  `==` (Equality):  Compares two values for equality, after converting them to a common type.
+                5 == "5"; // true
+            
+            -  `!=` (Inequality):  Compares two values for inequality, after converting them to a common type.
+                5 != "5"; // false
+            
+            -  `===` (Strict Equality):  Compares two values for equality without type conversion. Checks both value and therir Datatypes are same or not.
+                5 === "5"; // false
+            
+            -  `!==` (Strict Inequality):  Compares two values for inequality without type conversion.
+                5 !== "5"; // true
+            
+            -  `<` (Less Than):  Checks if the left value is less than the right value.
+                5 < 10; // true
+            
+            -  `>` (Greater Than):  Checks if the left value is greater than the right value.
+                10 > 5; // true
+            
+            -  `<=` (Less Than or Equal To):  Checks if the left value is less than or equal to the right value.
+                5 <= 5; // true
+            
+            -  `>=` (Greater Than or Equal To):  Checks if the left value is greater than or equal to the right value.
+                5 >= 3; // true
+        
+        3.  Logical Operators  (`&&`, `||`, `!`)
+
+            -  Logical operators are used to perform logical operations, typically with boolean values.
+
+            -  `&&` (Logical AND):  Returns `true` if both operands are `true`.
+                let x = true && false; // x = false
+            
+            -  `||` (Logical OR):  Returns `true` if at least one of the operands is `true`.
+                let y = true || false; // y = true
+            
+            -  `!` (Logical NOT):  Inverts the boolean value of its operand.
+                let z = !true; // z = false
+
+            - Truth table for this operators
+
+                A         B          A&&B         A||B           !A            !B
+
+                True      True        True         True          False         False
+
+                True      False       False        True          False         True
+
+                False     True        False        True          True          False  
+
+                False     False       False        False         True          True 
+        
+        4.  Assignment Operator  (`=`)
+
+            - The assignment operator is used to assign a value to a variable.
+
+            -  `=` (Assignment):  Assigns the value on the right to the variable on the left.
+                let a = 10; // a = 10
+            
+        5.  Unary Operators  (`++`, `--`, `+`, `-`)
+
+            - Unary operators operate on a single operand.
+
+            -  `++` (Increment):  Increases the value of the operand by 1.
+                let a = 5;
+                a++; // a = 6
+            
+            -  `--` (Decrement):  Decreases the value of the operand by 1.
+                let b = 5;
+                b--; // b = 4
+            
+            -  `+` (Unary Plus):  Converts its operand to a number.
+                let c = +"5"; // c = 5
+            
+            -  `-` (Unary Negation):  Converts its operand to a number and then negates it.
+                let d = -5; // d = -5
+        
+        6.  Ternary Operator  (`?:`)
+
+            -  The ternary operator is a shorthand for an `if-else` statement and is the only JavaScript operator that takes three operands.
+
+            -  `? :` (Ternary Operator):  The first operand is a condition, followed by a question mark (`?`). If the condition is `true`, the second operand is returned; otherwise, the third operand is returned.
+                let age = 18;
+                let isAdult = age >= 18 ? "Yes" : "No"; // isAdult = "Yes"
+        
+        7.  `typeof` Operator 
+
+            -  The `typeof` operator returns a string indicating the type of the operand.
+
+            -  `typeof`:  Returns the type of a variable or expression.
+                typeof 42;        // "number"
+                typeof "Hello";   // "string"
+                typeof true;      // "boolean"
+                typeof undefined; // "undefined"
+                typeof null;      // "object" (this is a quirk in JavaScript)
+        
+        - These operators are essential in JavaScript for performing various operations, from simple arithmetic to complex logical expressions.
+
+    Conditional Statements:
+
+        *  If - else
+        *  Nested if
+        *  Ladder if (elseif)
+        *  Swich-case
+        *  Ternary operator
+
+        1. If-Else
+
+            - Syntax for If-Else
+
+                if (condition) {
+                // Block of code if condition is true
+                } else {
+                // Block of code if condition is false
+                }
+
+            - The if-else statement is used to execute a block of code based on a condition. If the condition is true, the code inside the if block is executed; otherwise, the code inside the else block is executed.
+                
+                let age = 18;
+
+                if (age >= 18) {
+                console.log("You are an adult.");
+                } else {
+                console.log("You are not an adult.");
+                }
+
+            PROBLEM :
+
+                Given an integer M perform the following conditional actions:
+
+                    If M is multiple of 3 and 5 then print "Good Number" (without quotes).
+                    If M is only multiple of 3 and not of 5 then print "Bad Number" (without quotes).
+                    If M is only multiple of 5 and not of 3 then print "Poor Number" (without quotes).
+                    If M doesn't satisfy any of the above conditions then print "-1" (without quotes).
+                
+                Answer:
+
+                    let multipleNumber = 8;
+
+                    // If M is multiple of 3 and 5 then print "Good Number"
+                    if (multipleNumber % 3 === 0 && multipleNumber % 5 === 0) {
+                    console.log("Good Number");
+                    }
+
+                    // If M is only a multiple of 3 and not 5 then print "Bad Number"
+                    else if (multipleNumber % 3 === 0 && multipleNumber % 5 !== 0) {
+                    console.log("Bad Number");
+                    }
+
+                    // If M is only a multiple of 5 and not 3 then print "Poor Number"
+                    else if (multipleNumber % 3 !== 0 && multipleNumber % 5 === 0) {
+                    console.log("Poor Number");
+                    }
+
+                    // If M doesn't satisfy any of the above conditions then print "-1"
+                    else {
+                    console.log("-1");
+                    }
+
+                    
+
+        2. Nested If
+
+            - Syntax:
+
+                if (condition1) {
+                // Block of code if condition1 is true
+                if (condition2) {
+                    // Block of code if condition2 is true
+                }
+                } else {
+                // Block of code if condition1 is false
+                }
+
+            - A nested if means an if statement inside another if. This is used when multiple conditions need to be checked sequentially.
+
+                let score = 85;
+
+                if (score >= 90) {
+                console.log("Grade: A");
+                } else {
+                if (score >= 80) {
+                    console.log("Grade: B");
+                } else {
+                    console.log("Grade: C");
+                }
+                }
+
+        3. Ladder If (else-if)
+            
+            - Syntax:
+
+                if (condition1) {
+                // Block of code if condition1 is true
+                } else if (condition2) {
+                // Block of code if condition2 is true
+                } else if (condition3) {
+                // Block of code if condition3 is true
+                } else {
+                // Block of code if all conditions are false
+                }
+
+            - In an if-else if-else ladder, multiple conditions are checked one after another. The first true condition's block is executed, and the rest are ignored.
+
+                let marks = 75;
+
+                if (marks >= 90) {
+                console.log("Grade: A");
+                } else if (marks >= 80) {
+                console.log("Grade: B");
+                } else if (marks >= 70) {
+                console.log("Grade: C");
+                } else {
+                console.log("Grade: D");
+                }
+        4. Switch-Case
+
+            - Syntax:
+                    switch (expression) {
+                        case value1:
+                            // Block of code if expression === value1
+                            break;
+                        case value2:
+                            // Block of code if expression === value2
+                            break;
+                        // Add more cases as needed
+                        default:
+                            // Block of code if no case matches
+                        }
+
+
+            - The switch-case statement is used when you want to compare a variable or expression with several predefined values. Each value has a corresponding block of code that is executed if it matches.
+
+                let day = 3;
+
+                switch (day) {
+                case 1:
+                    console.log("Monday");
+                    break;
+                case 2:
+                    console.log("Tuesday");
+                    break;
+                case 3:
+                    console.log("Wednesday");
+                    break;
+                default:
+                    console.log("Invalid day");
+                }
+
+        5. Ternary 
+
+            - Syntax:
+
+                condition ? expression_if_true : expression_if_false;
+
+            - The ternary operator (?:) is a compact form of the if-else statement. It’s a one-liner used to assign values based on a condition.
+
+                let age = 20;
+                let canVote = (age >= 18) ? "Yes, can vote" : "No, cannot vote";
+
+                console.log(canVote);  // Output: Yes, can vote
+
+            - This way, different types of conditional statements allow for flexibility in determining what blocks of code get executed based on specific conditions.
+
+        PRACTICE PROBLEM:
+
+            1. Write a  program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and grade according to following:
+            Percentage >= 90% : Grade A
+            Percentage >= 80% : Grade B
+            Percentage >= 70% : Grade C
+            Percentage >= 60% : Grade D
+            Percentage >= 40% : Grade E
+            Percentage < 40% : Grade F
+
+            2 .  Write a  program to input basic salary of an employee and calculate its Gross salary according to following:
+            Basic Salary <= 10000 : HRA = 20%, DA = 80%
+            Basic Salary <= 20000 : HRA = 25%, DA = 90%
+            Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+            3. Write a P program to input electricity unit charges and calculate total electricity bill according to the given condition:
+            For first 50 units Rs. 0.50/unit
+            For next 100 units Rs. 0.75/unit
+            For next 100 units Rs. 1.20/unit
+            For unit above 250 Rs. 1.50/unit
+            An additional surcharge of 20% is added to the bill
+
+            4. Problem 1: Triangle Classifier
+            Problem:
+            Given three sides of a triangle, determine its type (equilateral, isosceles, or scalene).
+
+            Input:
+            Three positive integers representing the lengths of the sides.
+
+            Output:
+            A string indicating the type of triangle.
+
+            Example:
+            Input: 3 4 5
+            Output: Scalene
+
+            5. Problem:
+            Determine if a given year is a leap year.
+
+            Input:
+            A positive integer representing the year.
+
+            Output:
+            A boolean value indicating whether the year is a leap year.
+
+            Example:
+            Input: 2024
+            Output: True
+
+    Loops:
+
+        - Loops are used to repeat a block of code as long as a condition is true. Below are explanations and syntax for the different types of loops in JavaScript.
+
+        1. For Loop
+             
+            - The for loop repeats a block of code a certain number of times.
+
+            - Syyntax:
+
+                for (initialization; condition; increment/decrement) {
+                    // Code to be executed
+                }
+            
+            - (eg)
+
+                for (let i = 0; i < 5; i++) {
+                    console.log(i);  // Output: 0, 1, 2, 3, 4
+                }
+            
+        2. While Loop
+
+            - The while loop repeats a block of code while a specified condition is true.
+
+            - Syntax:
+
+                while (condition) {
+                    // Code to be executed
+                }
+            
+            - (eg)
+
+                let i = 0;
+                while (i < 5) {
+                    console.log(i);  // Output: 0, 1, 2, 3, 4
+                    i++;
+                }
+
+        3. Do-While Loop
+
+            - The do-while loop is similar to the while loop, but the block of code will always be executed at least once, even if the condition is false.
+
+            - Syntax:
+
+                do {
+                    // Code to be executed
+                } while (condition);
+
+            - Example:
+                
+                let i = 0;
+                do {
+                    console.log(i);  // Output: 0, 1, 2, 3, 4
+                    i++;
+                } while (i < 5);
+
+
+        4. ForEach Loop
+
+            - The forEach method is used to execute a function on each element of an array. It is not exactly a loop but a method for arrays.
+
+            - Syntax:
+
+                array.forEach(function(element) {
+                // Code to execute for each element
+                });
+
+            - Example:
+
+                let arr = [1, 2, 3, 4, 5];
+                arr.forEach(function(item) {
+                console.log(item);  // Output: 1, 2, 3, 4, 5
+                });
+
+            - Loops through each element of the array and executes the function.
+
+        5. For-Of Loop
+
+            - The for...of loop is used to iterate over iterable objects (like arrays, strings, etc.), where each element is returned one at a time.
+
+            - Syntax:
+
+                for (let variable of iterable) {
+                // Code to be executed
+                }
+
+            - Example:
+
+                let arr = [1, 2, 3, 4, 5];
+                for (let num of arr) {
+                console.log(num);  // Output: 1, 2, 3, 4, 5
+                }
+
+            - Iterates over the values of the iterable (arr).
+            
+        6. For-In Loop
+
+            - The for...in loop is used to iterate over the keys (properties) of an object or indices of an array.
+
+            - Syntax:
+
+                for (let key in object) {
+                // Code to be executed
+                }
+
+            - Example with Objects:
+
+                let person = {name: "John", age: 30, city: "New York"};
+                for (let key in person) {
+                console.log(key + ": " + person[key]);
+                // Output: name: John, age: 30, city: New York
+                }
+
+            - Example with Arrays:
+
+                let arr = [10, 20, 30];
+                for (let index in arr) {
+                console.log(index + ": " + arr[index]);
+                // Output: 0: 10, 1: 20, 2: 30
+                }
+
+            - Iterates over the keys (properties) in objects or indices in arrays.
+
+
+------------------------------------------- MileStone - 3 --------------------------------------------------------------
+
+    Milestone 3: Functions and Array Methods  
+
+        1. Functions: Named, anonymous, callback, arrow, closure
+        2. Array methods: `map`, `filter`, `reduce`
+        3. Array methods: `slice`, `splice`, `pop`, `push`, `shift`, `unshift`
+        4. String methods: `trim`, `split`, `join`, `toLowerCase`, `toUpperCase`
+        5. Numbers, Date
+        6. Event handling
+
+        Functions: Named, anonymous, callback, arrow, closure
+
+            1. Named Function: A function with a specific name, which can be called by that name later in the code.
+            
+                // Named function to add two numbers
+                function addNumbers(a, b) {
+                    let sum = a + b;
+                    console.log(sum, "------------ named function");
+                    return sum;
+                }
+
+                addNumbers(10, 15); // Output: 25
+
+                - Usage: Named functions are used for code reusability and to perform a specific task.
+
+            2. Anonymous Function: A function without a name, often assigned to a variable.
+            
+                // Anonymous function to add two numbers
+                const addNumbersAnon = function(a, b) {
+                    let sum = a + b;
+                    console.log(sum, "------------ anonymous function");
+                    return sum;
+                };
+
+                addNumbersAnon(10, 15); // Output: 25
+
+                - Usage: Anonymous functions are useful for functions that are used only once or need to be passed as arguments to other functions.
+
+            3. Arrow Function: A shorter syntax for writing functions using the `=>` symbol.
+            
+                // Arrow function to add two numbers
+                const addNumbersArrow = (a, b) => {
+                    let sum = a + b;
+                    console.log(sum, "------------ arrow function");
+                    return sum;
+                };
+
+                addNumbersArrow(10, 15); // Output: 25
+
+                - Usage: Arrow functions are used for shorter syntax and do not have their own `this` context, making them suitable for certain callback functions.
+
+            4. Closure Function: A function that retains access to its lexical scope, even when the function is executed outside that scope.
+            
+                // Closure function using an arrow function
+                const createAdder = (baseValue) => {
+                    return (a, b) => {
+                        let sum = baseValue + a + b;
+                        console.log(sum, "------------ closure function (arrow)");
+                        return sum;
+                    };
+                };
+
+                const addWithBase = createAdder(10); // baseValue is 10
+                addWithBase(5, 7); // Output: 22
+
+                - Usage: Closures are powerful in creating functions with private variables or in scenarios
+                  like event handlers and callbacks where a function needs to remember the environment in which it was created.
+
+        Array Methods: `slice`, `splice`, `pop`, `push`, `shift`, `unshift`
+
+            1. `pop()`: Removes the last element from an array.
+            
+            let arr = ['jan', 'feb', 'mar', 'apr', 'may'];
+            arr.pop(); // Removes 'may'
+            console.log(arr); // Output: ['jan', 'feb', 'mar', 'apr']
+            
+            2. `push()`: Adds a new element to the end of an array.
+            
+            arr.push('dec'); // Adds 'dec' to the end
+            console.log(arr); // Output: ['jan', 'feb', 'mar', 'apr', 'dec']
+            
+            3. `shift()`: Removes the first element from an array.
+            
+            arr.shift(); // Removes 'jan'
+            console.log(arr); // Output: ['feb', 'mar', 'apr', 'dec']
+            
+            4. `unshift()`: Adds a new element to the beginning of an array.
+            
+            arr.unshift('nov'); // Adds 'nov' at the beginning
+            console.log(arr); // Output: ['nov', 'feb', 'mar', 'apr', 'dec']
+            
+            5. `splice()`: Can add or remove elements from a specific index in the array.
+            - Syntax: `array.splice(startIndex, deleteCount, item1, item2, ...)`
+            - Example: Removing and adding elements
+                
+                let day = ['mon', 'tues', 'wed', 'fri', 'sat', 'sun'];
+                day.splice(3, 3, 'thurs'); // Removes 3 elements starting from index 3, adds 'thurs'
+                console.log(day); // Output: ['mon', 'tues', 'wed', 'thurs']
+     
+            6. `slice()`: Returns a shallow copy of a portion of an array into a new array object. It does not modify the original array.
+            
+            let months = ['jan', 'feb', 'mar', 'apr', 'may'];
+            let springMonths = months.slice(2, 4); // Extracts elements from index 2 to 3
+            console.log(springMonths); // Output: ['mar', 'apr']
+            console.log(months); // Original array remains unchanged
+  
+
+        Array Methods in JavaScript: `map()`, `filter()`, and `reduce()`
+
+            - These array methods are powerful tools for transforming, filtering, and aggregating data. Let's break down how each of these functions works:
+
+            1. `map()` Method:
+
+                - Purpose: The `map()` method creates a new array populated with the results of calling a provided function 
+                           on every element in the calling array.
+                - Syntax:
+                
+                    array.map((element, index, array) => { /* return transformed element */ });
+                
+                - element: The current element being processed in the array.
+                - index: The index of the current element being processed (optional).
+                - array: The array `map()` was called upon (optional).
+
+                - Example: Multiply each element in the array by 5.
+            
+                    let array = [1, 2, 3, 4, 5];
+
+                    // Using a for loop
+                    let arr = [];
+                    for (let i = 0; i < array.length; i++) {
+                        let arrValue = array[i] * 5;
+                        arr.push(arrValue);
+                    }
+                    console.log(arr); // Output: [5, 10, 15, 20, 25]
+
+                    // Using map function
+                    let transformedArray = array.map((data) => {
+                        return data * 5;
+                    });
+                    console.log(transformedArray, "----------"); // Output: [5, 10, 15, 20, 25]
+            
+
+            2. `filter()` Method:
+
+                - Purpose: The `filter()` method creates a new array with all elements that pass the test implemented by the provided function.
+                - Syntax:
+                
+                    array.filter((element, index, array) => { /* return condition */ });
+                
+                - The callback function should return `true` to keep the element, or `false` otherwise.
+
+                - Example: Filter out elements greater than 35.
+            
+                    let array1 = [35, 45, 85, 15, 75];
+
+                    let resultArray = array1.filter((data) => {
+                        return data > 35;
+                    });
+                    console.log(resultArray, "resultArray"); // Output: [45, 85, 75]
+            
+
+            3. `reduce()` Method:
+
+                - Purpose: The `reduce()` method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+                - Syntax:
+                
+                    array.reduce((accumulator, currentValue, currentIndex, array) => { /* return new accumulator value */ }, initialValue);
+                
+                - accumulator: The accumulated value previously returned in the last invocation of the callback, or `initialValue`, if supplied.
+                - currentValue: The current element being processed in the array.
+                - initialValue: A value to use as the first argument to the first call of the callback (optional).
+
+                - Example: Sum all numbers in the array.
+ 
+                    let mark = [45, 75, 85, 65, 69];
+
+                    let avg_mark = mark.reduce((prev, curr) => {
+                        return prev + curr;
+                    }, 0); // Here, 0 is the initial value for prev
+
+                    console.log(avg_mark); // Output: 339
+
+                    /
+                    * How it works:
+                    * Prev      Curr     final value 
+                    *  0          45        45
+                    * 45          75        120
+                    * 120         85        205
+                    * 205         65        270
+                    * 270         69        339
+                    */
+ 
+
