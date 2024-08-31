@@ -1,0 +1,35 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+h2{
+  color:brown;
+}
+.prepare{
+  padding: 10px;
+  background-color: rgba(255, 182, 249, 0.234);
+}
+.prepare h3{
+  color: rgb(85, 3, 54);
+}
+ul li::marker{
+  color: brown;
+}
+ol li::marker{
+  color: brown;
+}
+table{
+  width: 100%;
+  padding: 10px;
+  
+}
+td{
+  border-bottom: 1px solid rgb(137, 135, 135);
+  padding: 5px;
+  text-align: left;
+}
